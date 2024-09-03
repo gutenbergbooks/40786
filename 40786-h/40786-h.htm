@@ -1,0 +1,3472 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+  /*<![CDATA[*/
+  /* 
+  Project Gutenberg common docutils stylesheet.
+
+  This stylesheet contains styles common to HTML and EPUB.  Put styles
+  that are specific to HTML and EPUB into their relative stylesheets.
+
+  :Author: Marcello Perathoner (webmaster@gutenberg.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+  */
+
+  /* ADE 1.7.2 chokes on !important and throws all css out. */
+
+  /* FONTS */
+
+  .italics    { font-style: italic }
+  .no-italics { font-style: normal }
+
+  .bold       { font-weight: bold }
+  .no-bold    { font-weight: normal }
+
+  .small-caps { } /* Epub needs italics */
+  .gesperrt   { } /* Epub needs italics */
+  .antiqua    { font-style: italic } /* what else can we do ? */
+  .monospaced { font-family: monospace }
+
+  .smaller    { font-size: smaller }
+  .larger     { font-size: larger }
+
+  .xx-small   { font-size: xx-small }
+  .x-small    { font-size: x-small }
+  .small      { font-size: small }
+  .medium     { font-size: medium }
+  .large      { font-size: large }
+  .x-large    { font-size: x-large }
+  .xx-large   { font-size: xx-large }
+
+  .text-transform-uppercase { text-transform: uppercase }
+  .text-transform-lowercase { text-transform: lowercase }
+  .text-transform-none      { text-transform: none }
+
+  .red        { color: red }
+  .green      { color: green }
+  .blue       { color: blue }
+  .yellow     { color: yellow }
+  .white      { color: white }
+  .gray       { color: gray }
+  .black      { color: black }
+
+  /* ALIGN */
+
+  .left       { text-align: left }
+  .center     { text-align: center }
+  .right      { text-align: right }
+  .justify    { text-align: justify }
+
+  /* LINE HEIGHT */
+
+  body        { line-height: 1.5 }
+  p           { margin: 0; 
+              text-indent: 2em }
+
+  /* PAGINATION */
+
+  .title, .subtitle     { page-break-after:  avoid }
+
+  .container, .title, .subtitle, #pg-header            
+                      { page-break-inside: avoid }
+
+  /* SECTIONS */
+
+  body         { text-align: justify }
+
+  p.pfirst,
+  p.center,
+  p.right,
+  div.center p,
+  div.right p,
+  p.noindent   { text-indent: 0 }
+
+  .boxed         { border: 1px solid black; padding: 1em }
+  .topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+  div.section    { clear: both }
+
+  div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+  div.line-block.inner { margin: 0 0 0 10% }
+  div.line             { margin-left: 20%; text-indent: -20%; }
+  .line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+  hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+  div.transition       { margin: 1.5em 0 }
+
+  .vfill, .vspace      { border: 0px solid white }
+
+  .title               { margin: 1.5em 0 }
+  .title.with-subtitle { margin-bottom: 0 }
+  .subtitle            { margin: 1.5em 0 }
+
+  /* header font style */
+  /* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+  h1.title                        { font-size: 200%; }  /* for book title only */
+  h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+  h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+  h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+  h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+  h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+  /* title page */
+
+  h1.title, p.subtitle.level-1,
+  h2.title, p.subtitle.level-2    { text-align: center }
+
+  #pg-header,
+  h1.document-title               { margin: 10% 0 5% 0 }
+  p.document-subtitle             { margin:  0  0 5% 0 }
+
+  /* PG header and footer */
+  #pg-machine-header { }
+  #pg-produced-by { }
+
+  li.toc-entry            { list-style-type: none }
+  ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+  .attribution            { margin-top: 1.5em }
+
+  .example-rendered { 
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+  .literal-block.example-source   { 
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+  /* DROPCAPS */
+
+  /* BLOCKQUOTES */
+
+  blockquote { margin: 1.5em 10% }
+
+  blockquote.epigraph { }
+
+  blockquote.highlights { }
+
+  div.local-contents { margin: 1.5em 10% }
+
+  div.abstract { margin: 3em 10% }
+  div.caption  { margin: 1.5em 10%; text-align: center; font-style: italic }
+  div.legend   { margin: 1.5em 10% }
+
+  .hidden { display: none }
+
+  .invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+  a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+  dl.docutils dd {
+  margin-bottom: 0.5em }
+
+  div.figure { margin-top: 3em; margin-bottom: 3em }
+
+  img { max-width: 100% }
+
+  div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+  div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+  div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+  ol.simple, ul.simple { margin: 1.5em 0 }
+
+  ol.toc-list,    ul.toc-list    { padding-left:  0  }
+  ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+  ol.arabic {
+  list-style: decimal }
+
+  ol.loweralpha {
+  list-style: lower-alpha }
+
+  ol.upperalpha {
+  list-style: upper-alpha }
+
+  ol.lowerroman {
+  list-style: lower-roman }
+
+  ol.upperroman {
+  list-style: upper-roman }
+
+  p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+  p.label {
+  white-space: nowrap }
+
+  p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+  p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+  p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+  pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+  .literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+  span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+  span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  span.interpreted {
+  font-family: sans-serif }
+
+  span.option {
+  white-space: nowrap }
+
+  span.pre {
+  white-space: pre }
+
+  span.problematic {
+  color: red }
+
+  span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+  table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+  table.align-left, table.align-right { margin-top: 0 }
+
+  table.table                { border-collapse: collapse; }
+
+  table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+  table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+  table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+  table.table.hrules-rows  tr.last        { border-width: 0 }
+  table.table.hrules-rows  td, 
+  table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+  table.table tr             { border-width: 0 }
+  table.table td, 
+  table.table th             { padding: 0.5ex 1em }
+  table.table tr.first td    { padding-top: 1ex }
+  table.table tr.last td     { padding-bottom: 1ex }
+  table.table tr.first th    { padding-top: 1ex }
+  table.table tr.last th     { padding-bottom: 1ex }
+
+
+  table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+  table.docinfo {
+  margin: 3em 4em }
+
+  table.docutils { }
+
+  tr.footnote.footnote td, tr.footnote.footnote th { 
+  padding: 0 0.5em 1.5em;
+  }
+
+  table.docutils td, table.docutils th,
+  table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+  table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+  /* used to remove borders from tables and images */
+  .borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+  table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+  h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+  h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+  ul.auto-toc {
+  list-style-type: none }
+  /*]]>*/
+  </style>
+  <style type="text/css">
+  /*<![CDATA[*/
+  /* 
+  Project Gutenberg HTML docutils stylesheet.
+
+  This stylesheet contains styles specific to HTML.
+  */
+
+  /* FONTS */
+
+  /* em                { font-style: normal }
+  strong            { font-weight: normal } */
+
+  .small-caps       { font-variant: small-caps }
+  .gesperrt         { letter-spacing: 0.1em }
+
+  /* ALIGN */
+
+  .align-left       { clear: left;
+                    float: left;
+                    margin-right: 1em }
+
+  .align-right      { clear: right;
+                    float: right;
+                    margin-left: 1em }
+
+  .align-center     { margin-left: auto;
+                    margin-right: auto }
+
+  div.shrinkwrap    { display: table; }
+
+  /* SECTIONS */
+
+  body              { margin: 5% 10% 5% 10% }
+
+  /* compact list items containing just one p */
+  li p.pfirst       { margin-top: 0; margin-bottom: 0 } 
+
+  .first            { margin-top: 0 !important; 
+                    text-indent: 0 !important } 
+  .last             { margin-bottom: 0 !important }
+
+  span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+  img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+  span.dropspan     { font-variant: small-caps }
+
+  .no-page-break    { page-break-before: avoid !important }
+
+  /* PAGINATION */
+
+  @media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+  }
+
+  @media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+  }
+
+  /*]]>*/
+  </style>
+  <title>THE BLACK RIDERS AND OTHER LINES</title>
+  <style type="text/css">
+  /*<![CDATA[*/
+  .pageno       { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+  .pageno:after { color: gray; content: '[' attr(title) ']' }
+  .lineno       { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+  .lineno:after { color: gray; content: '[' attr(title) ']' }
+  .toc-pageref  { float: right }
+  pre           { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+  /*]]>*/
+  </style>
+</head>
+<body>
+  <div class="document" id="the-black-riders-and-other-lines">
+    <h1 class="document-title level-1 pfirst title">THE BLACK RIDERS AND OTHER LINES</h1><!-- -*- encoding: utf-8 -*- -->
+    <div class="clearpage"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="align-None container coverpage">
+      <div class="vspace" style="height: 3em"></div>
+      <div class="align-center auto-scaled figure" style="width: 51%" id="figure-6">
+        <img class="align-center" style="display: block; width: 100%" alt=" " src="images/img-cover.jpg" />
+        <div class="caption figure">
+          Cover
+        </div>
+      </div>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <div class="align-None center container titlepage white-space-pre-line">
+      <p class="pfirst white-space-pre-line x-large">THE BLACK RIDERS AND<br />
+      OTHER LINES</p>
+      <div class="vspace white-space-pre-line" style="height: 2em"></div>
+      <p class="large pfirst white-space-pre-line">BY STEPHEN CRANE</p>
+      <div class="vspace white-space-pre-line" style="height: 4em"></div>
+      <p class="center medium pfirst white-space-pre-line">PRIVATELY REPRINTED<br />
+      BY COURTESY OF SMALL,<br />
+      MAYNARD &amp; COMPANY</p>
+      <div class="vspace white-space-pre-line" style="height: 4em"></div>
+    </div>
+    <div class="align-None center container verso white-space-pre-line">
+      <p class="center pfirst small white-space-pre-line">Copyright, 1905, by Copeland &amp; Day</p>
+    </div>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center large pfirst">I</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Black Riders came from the sea.
+          </div>
+          <div class="line">
+            There was clang and clang of spear and shield,
+          </div>
+          <div class="line">
+            And clash and clash of hoof and heel,
+          </div>
+          <div class="line">
+            Wild shouts and the wave of hair
+          </div>
+          <div class="line">
+            In the rush upon the wind:
+          </div>
+          <div class="line">
+            Thus the ride of Sin.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">II</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Three little birds in a row
+          </div>
+          <div class="line">
+            Sat musing.
+          </div>
+          <div class="line">
+            A man passed near that place.
+          </div>
+          <div class="line">
+            Then did the little birds nudge each other.
+          </div>
+          <div class="line">
+            They said, "He thinks he can sing."
+          </div>
+          <div class="line">
+            They threw back their heads to laugh,
+          </div>
+          <div class="line">
+            With quaint countenances
+          </div>
+          <div class="line">
+            They regarded him.
+          </div>
+          <div class="line">
+            They were very curious,
+          </div>
+          <div class="line">
+            Those three little birds in a row.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">III</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            In the desert
+          </div>
+          <div class="line">
+            I saw a creature, naked, bestial,
+          </div>
+          <div class="line">
+            Who, squatting upon the ground,
+          </div>
+          <div class="line">
+            Held his heart in his hands,
+          </div>
+          <div class="line">
+            And ate of it.
+          </div>
+          <div class="line">
+            I said, "Is it good, friend?"
+          </div>
+          <div class="line">
+            "It is bitter--bitter," he answered;
+          </div>
+          <div class="line">
+            "But I like it
+          </div>
+          <div class="line">
+            Because it is bitter,
+          </div>
+          <div class="line">
+            And because it is my heart."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">IV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Yes, I have a thousand tongues,
+          </div>
+          <div class="line">
+            And nine and ninety-nine lie.
+          </div>
+          <div class="line">
+            Though I strive to use the one,
+          </div>
+          <div class="line">
+            It will make no melody at my will,
+          </div>
+          <div class="line">
+            But is dead in my mouth.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">V</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Once there came a man
+          </div>
+          <div class="line">
+            Who said,
+          </div>
+          <div class="line">
+            "Range me all men of the world in rows."
+          </div>
+          <div class="line">
+            And instantly
+          </div>
+          <div class="line">
+            There was terrific clamor among the people
+          </div>
+          <div class="line">
+            Against being ranged in rows.
+          </div>
+          <div class="line">
+            There was a loud quarrel, world-wide.
+          </div>
+          <div class="line">
+            It endured for ages;
+          </div>
+          <div class="line">
+            And blood was shed
+          </div>
+          <div class="line">
+            By those who would not stand in rows,
+          </div>
+          <div class="line">
+            And by those who pined to stand in rows,
+          </div>
+          <div class="line">
+            Eventually, the man went to death, weeping.
+          </div>
+          <div class="line">
+            And those who staid in bloody scuffle
+          </div>
+          <div class="line">
+            Knew not the great simplicity.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">VI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            God fashioned the ship of the world carefully
+          </div>
+          <div class="line">
+            With the infinite skill of an All-Master
+          </div>
+          <div class="line">
+            Made He the hull and the sails,
+          </div>
+          <div class="line">
+            Held He the rudder
+          </div>
+          <div class="line">
+            Ready for adjustment.
+          </div>
+          <div class="line">
+            Erect stood He, scanning his work proudly.
+          </div>
+          <div class="line">
+            Then--at fateful time--a Wrong called,
+          </div>
+          <div class="line">
+            And God turned, heeding.
+          </div>
+          <div class="line">
+            Lo, the ship, at this opportunity, slipped slyly,
+          </div>
+          <div class="line">
+            Making cunning noiseless travel down the ways.
+          </div>
+          <div class="line">
+            So that, forever rudderless, it went upon the seas
+          </div>
+          <div class="line">
+            Going ridiculous voyages,
+          </div>
+          <div class="line">
+            Making quaint progress,
+          </div>
+          <div class="line">
+            Turning as with serious purpose
+          </div>
+          <div class="line">
+            Before stupid winds.
+          </div>
+          <div class="line">
+            And there were many in the sky
+          </div>
+          <div class="line">
+            Who laughed at this thing.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">VII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Mystic Shadow, bending near me,
+          </div>
+          <div class="line">
+            Who art thou?
+          </div>
+          <div class="line">
+            Whence come ye?
+          </div>
+          <div class="line">
+            And--tell me--is it fair
+          </div>
+          <div class="line">
+            Or is the truth bitter as eaten fire?
+          </div>
+          <div class="line">
+            Tell me!
+          </div>
+          <div class="line">
+            Fear not that I should quaver,
+          </div>
+          <div class="line">
+            For I dare--I dare.
+          </div>
+          <div class="line">
+            Then, tell me!
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">VIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            I looked here;
+          </div>
+          <div class="line">
+            I looked there;
+          </div>
+          <div class="line">
+            Nowhere could I see my love.
+          </div>
+          <div class="line">
+            And--this time--
+          </div>
+          <div class="line">
+            She was in my heart.
+          </div>
+          <div class="line">
+            Truly, then, I have no complaint,
+          </div>
+          <div class="line">
+            For though she be fair and fairer,
+          </div>
+          <div class="line">
+            She is none so fair as she
+          </div>
+          <div class="line">
+            In my heart.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">IX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            I stood upon a high place,
+          </div>
+          <div class="line">
+            And saw, below, many devils
+          </div>
+          <div class="line">
+            Running, leaping,
+          </div>
+          <div class="line">
+            And carousing in sin.
+          </div>
+          <div class="line">
+            One looked up, grinning,
+          </div>
+          <div class="line">
+            And said, "Comrade! Brother!"
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">X</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Should the wide world roll away,
+          </div>
+          <div class="line">
+            Leaving black terror,
+          </div>
+          <div class="line">
+            Limitless night,
+          </div>
+          <div class="line">
+            Nor God, nor man, nor place to stand
+          </div>
+          <div class="line">
+            Would be to me essential,
+          </div>
+          <div class="line">
+            If thou and thy white arms were there,
+          </div>
+          <div class="line">
+            And the fall to doom a long way.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            In a lonely place,
+          </div>
+          <div class="line">
+            I encountered a sage
+          </div>
+          <div class="line">
+            Who sat, all still,
+          </div>
+          <div class="line">
+            Regarding a newspaper.
+          </div>
+          <div class="line">
+            He accosted me:
+          </div>
+          <div class="line">
+            "Sir, what is this?"
+          </div>
+          <div class="line">
+            Then I saw that I was greater,
+          </div>
+          <div class="line">
+            Aye, greater than this sage.
+          </div>
+          <div class="line">
+            I answered him at once,
+          </div>
+          <div class="line">
+            "Old, old man, it is the wisdom of the age."
+          </div>
+          <div class="line">
+            The sage looked upon me with admiration.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            "and the sins of the fathers shall be
+          </div>
+          <div class="line">
+            visited upon the heads of the children,
+          </div>
+          <div class="line">
+            even unto the third and fourth
+          </div>
+          <div class="line">
+            generation of them that hate me."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Well, then, I hate thee, Unrighteous Picture;
+          </div>
+          <div class="line">
+            Wicked Image, I hate thee;
+          </div>
+          <div class="line">
+            So, strike with thy vengeance
+          </div>
+          <div class="line">
+            The heads of those little men
+          </div>
+          <div class="line">
+            Who come blindly.
+          </div>
+          <div class="line">
+            It will be a brave thing.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            If there is a witness to my little life,
+          </div>
+          <div class="line">
+            To my tiny throes and struggles,
+          </div>
+          <div class="line">
+            He sees a fool;
+          </div>
+          <div class="line">
+            And it is not fine for gods to menace fools.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XIV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was crimson clash of war.
+          </div>
+          <div class="line">
+            Lands turned black and bare;
+          </div>
+          <div class="line">
+            Women wept;
+          </div>
+          <div class="line">
+            Babes ran, wondering.
+          </div>
+          <div class="line">
+            There came one who understood not these things.
+          </div>
+          <div class="line">
+            He said, "Why is this?"
+          </div>
+          <div class="line">
+            Whereupon a million strove to answer him.
+          </div>
+          <div class="line">
+            There was such intricate clamor of tongues,
+          </div>
+          <div class="line">
+            That still the reason was not.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            "Tell brave deeds of war."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Then they recounted tales,--
+          </div>
+          <div class="line">
+            "There were stern stands
+          </div>
+          <div class="line">
+            "And bitter runs for glory."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Ah, I think there were braver deeds.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XVI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Charity, thou art a lie,
+          </div>
+          <div class="line">
+            A toy of women,
+          </div>
+          <div class="line">
+            A pleasure of certain men.
+          </div>
+          <div class="line">
+            In the presence of justice,
+          </div>
+          <div class="line">
+            Lo, the walls of the temple
+          </div>
+          <div class="line">
+            Are visible
+          </div>
+          <div class="line">
+            Through thy form of sudden shadows.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XVII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There were many who went in huddled procession,
+          </div>
+          <div class="line">
+            They knew not whither;
+          </div>
+          <div class="line">
+            But, at any rate, success or calamity
+          </div>
+          <div class="line">
+            Would attend all in equality.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was one who sought a new road.
+          </div>
+          <div class="line">
+            He went into direful thickets,
+          </div>
+          <div class="line">
+            And ultimately he died thus, alone;
+          </div>
+          <div class="line">
+            But they said he had courage.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XVIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            In Heaven,
+          </div>
+          <div class="line">
+            Some little blades of grass
+          </div>
+          <div class="line">
+            Stood before God.
+          </div>
+          <div class="line">
+            "What did you do?"
+          </div>
+          <div class="line">
+            Then all save one of the little blades
+          </div>
+          <div class="line">
+            Began eagerly to relate
+          </div>
+          <div class="line">
+            The merits of their lives.
+          </div>
+          <div class="line">
+            This one stayed a small way behind,
+          </div>
+          <div class="line">
+            Ashamed.
+          </div>
+          <div class="line">
+            Presently, God said,
+          </div>
+          <div class="line">
+            "And what did you do?"
+          </div>
+          <div class="line">
+            The little blade answered, "Oh, my Lord,
+          </div>
+          <div class="line">
+            "Memory is bitter to me,
+          </div>
+          <div class="line">
+            "For, if I did good deeds,
+          </div>
+          <div class="line">
+            "I know not of them."
+          </div>
+          <div class="line">
+            Then God, in all His splendor,
+          </div>
+          <div class="line">
+            Arose from His throne.
+          </div>
+          <div class="line">
+            "Oh, best little blade of grass!" He said.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XIX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            A god in wrath
+          </div>
+          <div class="line">
+            Was beating a man;
+          </div>
+          <div class="line">
+            He cuffed him loudly
+          </div>
+          <div class="line">
+            With thunderous blows
+          </div>
+          <div class="line">
+            That rang and rolled over the earth.
+          </div>
+          <div class="line">
+            All people came running.
+          </div>
+          <div class="line">
+            The man screamed and struggled,
+          </div>
+          <div class="line">
+            And bit madly at the feet of the god.
+          </div>
+          <div class="line">
+            The people cried,
+          </div>
+          <div class="line">
+            "Ah, what a wicked man!"
+          </div>
+          <div class="line">
+            And--
+          </div>
+          <div class="line">
+            "Ah, what a redoubtable god!"
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            A learned man came to me once.
+          </div>
+          <div class="line">
+            He said, "I know the way,--come."
+          </div>
+          <div class="line">
+            And I was overjoyed at this.
+          </div>
+          <div class="line">
+            Together we hastened.
+          </div>
+          <div class="line">
+            Soon, too soon, were we
+          </div>
+          <div class="line">
+            Where my eyes were useless,
+          </div>
+          <div class="line">
+            And I knew not the ways of my feet
+          </div>
+          <div class="line">
+            I clung to the hand of my friend;
+          </div>
+          <div class="line">
+            But at last he cried, "I am lost."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was, before me,
+          </div>
+          <div class="line">
+            Mile upon mile
+          </div>
+          <div class="line">
+            Of snow, ice, burning sand.
+          </div>
+          <div class="line">
+            And yet I could look beyond all this,
+          </div>
+          <div class="line">
+            To a place of infinite beauty;
+          </div>
+          <div class="line">
+            And I could see the loveliness of her
+          </div>
+          <div class="line">
+            Who walked in the shade of the trees.
+          </div>
+          <div class="line">
+            When I gazed,
+          </div>
+          <div class="line">
+            All was lost
+          </div>
+          <div class="line">
+            But this place of beauty and her.
+          </div>
+          <div class="line">
+            When I gazed,
+          </div>
+          <div class="line">
+            And in my gazing, desired,
+          </div>
+          <div class="line">
+            Then came again
+          </div>
+          <div class="line">
+            Mile upon mile,
+          </div>
+          <div class="line">
+            Of snow, ice, burning sand.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Once I saw Mountains angry,
+          </div>
+          <div class="line">
+            And ranged in battle-front.
+          </div>
+          <div class="line">
+            Against them stood a little man;
+          </div>
+          <div class="line">
+            Aye, he was no bigger than my finger.
+          </div>
+          <div class="line">
+            I laughed, and spoke to one near me,
+          </div>
+          <div class="line">
+            "Will he prevail?"
+          </div>
+          <div class="line">
+            "Surely," replied this other;
+          </div>
+          <div class="line">
+            "His grandfathers beat them many times."
+          </div>
+          <div class="line">
+            Then did I see much virtue in grandfathers,--
+          </div>
+          <div class="line">
+            At least, for the little man
+          </div>
+          <div class="line">
+            Who stood against the Mountains.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Places among the stars,
+          </div>
+          <div class="line">
+            Soft gardens near the sun,
+          </div>
+          <div class="line">
+            Keep your distant beauty;
+          </div>
+          <div class="line">
+            Shed no beams upon my weak heart.
+          </div>
+          <div class="line">
+            Since she is here
+          </div>
+          <div class="line">
+            In a place of blackness,
+          </div>
+          <div class="line">
+            Not your golden days
+          </div>
+          <div class="line">
+            Nor your silver nights
+          </div>
+          <div class="line">
+            Can call me to you.
+          </div>
+          <div class="line">
+            Since she is here
+          </div>
+          <div class="line">
+            In a place of blackness,
+          </div>
+          <div class="line">
+            Here I stay and wait.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXIV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            I saw a man pursuing the horizon;
+          </div>
+          <div class="line">
+            Round and round they sped.
+          </div>
+          <div class="line">
+            I was disturbed at this;
+          </div>
+          <div class="line">
+            I accosted the man.
+          </div>
+          <div class="line">
+            "It is futile," I said,
+          </div>
+          <div class="line">
+            "You can never"--
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            "You lie," he cried,
+          </div>
+          <div class="line">
+            And ran on.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Behold, the grave of a wicked man,
+          </div>
+          <div class="line">
+            And near it, a stern spirit.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            There came a drooping maid with violets,
+          </div>
+          <div class="line">
+            But the spirit grasped her arm.
+          </div>
+          <div class="line">
+            "No flowers for him," he said.
+          </div>
+          <div class="line">
+            The maid wept:
+          </div>
+          <div class="line">
+            "Ah, I loved him."
+          </div>
+          <div class="line">
+            But the spirit, grim and frowning:
+          </div>
+          <div class="line">
+            "No flowers for him."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Now, this is it--
+          </div>
+          <div class="line">
+            If the spirit was just,
+          </div>
+          <div class="line">
+            Why did the maid weep?
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXVI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was set before me a mighty hill,
+          </div>
+          <div class="line">
+            And long days I climbed
+          </div>
+          <div class="line">
+            Through regions of snow.
+          </div>
+          <div class="line">
+            When I had before me the summit-view,
+          </div>
+          <div class="line">
+            It seemed that my labor
+          </div>
+          <div class="line">
+            Had been to see gardens
+          </div>
+          <div class="line">
+            Lying at impossible distances.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXVII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            A youth in apparel that glittered
+          </div>
+          <div class="line">
+            Went to walk in a grim forest.
+          </div>
+          <div class="line">
+            There he met an assassin
+          </div>
+          <div class="line">
+            Attired all in garb of old days;
+          </div>
+          <div class="line">
+            He, scowling through the thickets,
+          </div>
+          <div class="line">
+            And dagger poised quivering,
+          </div>
+          <div class="line">
+            Rushed upon the youth.
+          </div>
+          <div class="line">
+            "Sir," said this latter,
+          </div>
+          <div class="line">
+            "I am enchanted, believe me,
+          </div>
+          <div class="line">
+            "To die, thus,
+          </div>
+          <div class="line">
+            "In this medieval fashion,
+          </div>
+          <div class="line">
+            "According to the best legends;
+          </div>
+          <div class="line">
+            "Ah, what joy!"
+          </div>
+          <div class="line">
+            Then took he the wound, smiling,
+          </div>
+          <div class="line">
+            And died, content.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXVIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            "Truth," said a traveller,
+          </div>
+          <div class="line">
+            "Is a rock, a mighty fortress;
+          </div>
+          <div class="line">
+            "Often have I been to it,
+          </div>
+          <div class="line">
+            "Even to its highest tower,
+          </div>
+          <div class="line">
+            "From whence the world looks black."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            "Truth," said a traveller,
+          </div>
+          <div class="line">
+            "Is a breath, a wind,
+          </div>
+          <div class="line">
+            "A shadow, a phantom;
+          </div>
+          <div class="line">
+            "Long have I pursued it,
+          </div>
+          <div class="line">
+            "But never have I touched
+          </div>
+          <div class="line">
+            "The hem of its garment."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            And I believed the second traveller;
+          </div>
+          <div class="line">
+            For truth was to me
+          </div>
+          <div class="line">
+            A breath, a wind,
+          </div>
+          <div class="line">
+            A shadow, a phantom,
+          </div>
+          <div class="line">
+            And never had I touched
+          </div>
+          <div class="line">
+            The hem of its garment.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXIX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Behold, from the land of the farther suns
+          </div>
+          <div class="line">
+            I returned.
+          </div>
+          <div class="line">
+            And I was in a reptile-swarming place,
+          </div>
+          <div class="line">
+            Peopled, otherwise, with grimaces,
+          </div>
+          <div class="line">
+            Shrouded above in black impenetrableness.
+          </div>
+          <div class="line">
+            I shrank, loathing,
+          </div>
+          <div class="line">
+            Sick with it.
+          </div>
+          <div class="line">
+            And I said to him,
+          </div>
+          <div class="line">
+            "What is this?"
+          </div>
+          <div class="line">
+            He made answer slowly,
+          </div>
+          <div class="line">
+            "Spirit, this is a world;
+          </div>
+          <div class="line">
+            "This was your home."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Supposing that I should have the courage
+          </div>
+          <div class="line">
+            To let a red sword of virtue
+          </div>
+          <div class="line">
+            Plunge into my heart,
+          </div>
+          <div class="line">
+            Letting to the weeds of the ground
+          </div>
+          <div class="line">
+            My sinful blood,
+          </div>
+          <div class="line">
+            What can you offer me?
+          </div>
+          <div class="line">
+            A gardened castle?
+          </div>
+          <div class="line">
+            A flowery kingdom?
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            What? A hope?
+          </div>
+          <div class="line">
+            Then hence with your red sword of virtue.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Many workmen
+          </div>
+          <div class="line">
+            Built a huge ball of masonry
+          </div>
+          <div class="line">
+            Upon a mountain-top.
+          </div>
+          <div class="line">
+            Then they went to the valley below,
+          </div>
+          <div class="line">
+            And turned to behold their work.
+          </div>
+          <div class="line">
+            "It is grand," they said;
+          </div>
+          <div class="line">
+            They loved the thing.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Of a sudden, it moved:
+          </div>
+          <div class="line">
+            It came upon them swiftly;
+          </div>
+          <div class="line">
+            It crushed them all to blood.
+          </div>
+          <div class="line">
+            But some had opportunity to squeal.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Two or three angels
+          </div>
+          <div class="line">
+            Came near to the earth.
+          </div>
+          <div class="line">
+            They saw a fat church.
+          </div>
+          <div class="line">
+            Little black streams of people
+          </div>
+          <div class="line">
+            Came and went in continually.
+          </div>
+          <div class="line">
+            And the angels were puzzled
+          </div>
+          <div class="line">
+            To know why the people went thus,
+          </div>
+          <div class="line">
+            And why they stayed so long within.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was one I met upon the road
+          </div>
+          <div class="line">
+            Who looked at me with kind eyes.
+          </div>
+          <div class="line">
+            He said, "Show me of your wares."
+          </div>
+          <div class="line">
+            And this I did,
+          </div>
+          <div class="line">
+            Holding forth one.
+          </div>
+          <div class="line">
+            He said, "It is a sin."
+          </div>
+          <div class="line">
+            Then held I forth another;
+          </div>
+          <div class="line">
+            He said, "It is a sin."
+          </div>
+          <div class="line">
+            Then held I forth another;
+          </div>
+          <div class="line">
+            He said, "It is a sin."
+          </div>
+          <div class="line">
+            And so to the end;
+          </div>
+          <div class="line">
+            Always he said, "It is a sin."
+          </div>
+          <div class="line">
+            And, finally, I cried out,
+          </div>
+          <div class="line">
+            "But I have none other."
+          </div>
+          <div class="line">
+            Then did he look at me
+          </div>
+          <div class="line">
+            With kinder eyes.
+          </div>
+          <div class="line">
+            "Poor soul!" he said.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXIV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            I stood upon a highway,
+          </div>
+          <div class="line">
+            And, behold, there came
+          </div>
+          <div class="line">
+            Many strange pedlers.
+          </div>
+          <div class="line">
+            To me each one made gestures.
+          </div>
+          <div class="line">
+            Holding forth little images, saying,
+          </div>
+          <div class="line">
+            "This is my pattern of God.
+          </div>
+          <div class="line">
+            "Now this is the God I prefer."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            But I said, "Hence!
+          </div>
+          <div class="line">
+            "Leave me with mine own,
+          </div>
+          <div class="line">
+            "And take you yours away;
+          </div>
+          <div class="line">
+            "I can't buy of your patterns of God,
+          </div>
+          <div class="line">
+            "The little Gods you may rightly prefer."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            A man saw a ball of gold in the sky;
+          </div>
+          <div class="line">
+            He climbed for it,
+          </div>
+          <div class="line">
+            And eventually he achieved it--
+          </div>
+          <div class="line">
+            It was clay.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Now this is the strange part:
+          </div>
+          <div class="line">
+            When the man went to the earth
+          </div>
+          <div class="line">
+            And looked again,
+          </div>
+          <div class="line">
+            Lo, there was the ball of gold.
+          </div>
+          <div class="line">
+            Now this is the strange part:
+          </div>
+          <div class="line">
+            It was a ball of gold.
+          </div>
+          <div class="line">
+            Aye, by the Heavens, it was a ball of gold.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXVI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            I met a seer.
+          </div>
+          <div class="line">
+            He held in his hands
+          </div>
+          <div class="line">
+            The book of wisdom.
+          </div>
+          <div class="line">
+            "Sir," I addressed him,
+          </div>
+          <div class="line">
+            "Let me read."
+          </div>
+          <div class="line">
+            "Child--" he began.
+          </div>
+          <div class="line">
+            "Sir," I said,
+          </div>
+          <div class="line">
+            "Think not that I am a child,
+          </div>
+          <div class="line">
+            "For already I know much
+          </div>
+          <div class="line">
+            "Of that which you hold.
+          </div>
+          <div class="line">
+            "Aye, much."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            He smiled.
+          </div>
+          <div class="line">
+            Then he opened the book
+          </div>
+          <div class="line">
+            And held it before me.--
+          </div>
+          <div class="line">
+            Strange that I should have grown so suddenly blind.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXVII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            On the horizon the peaks assembled;
+          </div>
+          <div class="line">
+            And as I looked,
+          </div>
+          <div class="line">
+            The march of the mountains began.
+          </div>
+          <div class="line">
+            As they marched, they sang,
+          </div>
+          <div class="line">
+            "Aye! We come! We come!"
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXVIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            The ocean said to me once,
+          </div>
+          <div class="line">
+            "Look!
+          </div>
+          <div class="line">
+            "Yonder on the shore
+          </div>
+          <div class="line">
+            "Is a woman, weeping.
+          </div>
+          <div class="line">
+            "I have watched her.
+          </div>
+          <div class="line">
+            "Go you and tell her this,--
+          </div>
+          <div class="line">
+            "Her lover I have laid
+          </div>
+          <div class="line">
+            "In cool green hall.
+          </div>
+          <div class="line">
+            "There is wealth of golden sand
+          </div>
+          <div class="line">
+            "And pillars, coral-red;
+          </div>
+          <div class="line">
+            "Two white fish stand guard at his bier.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            "Tell her this
+          </div>
+          <div class="line">
+            "And more,--
+          </div>
+          <div class="line">
+            "That the king of the seas
+          </div>
+          <div class="line">
+            "Weeps too, old, helpless man.
+          </div>
+          <div class="line">
+            "The bustling fates
+          </div>
+          <div class="line">
+            "Heap his hands with corpses
+          </div>
+          <div class="line">
+            "Until he stands like a child,
+          </div>
+          <div class="line">
+            "With surplus of toys."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XXXIX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            The livid lightnings flashed in the clouds;
+          </div>
+          <div class="line">
+            The leaden thunders crashed.
+          </div>
+          <div class="line">
+            A worshipper raised his arm.
+          </div>
+          <div class="line">
+            "Hearken! Hearken! The voice of God!"
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            "Not so," said a man.
+          </div>
+          <div class="line">
+            "The voice of God whispers in the heart
+          </div>
+          <div class="line">
+            "So softly
+          </div>
+          <div class="line">
+            "That the soul pauses,
+          </div>
+          <div class="line">
+            "Making no noise,
+          </div>
+          <div class="line">
+            "And strives for these melodies,
+          </div>
+          <div class="line">
+            "Distant, sighing, like faintest breath,
+          </div>
+          <div class="line">
+            "And all the being is still to hear."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XL</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            And you love me?
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            I love you.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            You are, then, cold coward.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Aye; but, beloved,
+          </div>
+          <div class="line">
+            When I strive to come to you,
+          </div>
+          <div class="line">
+            Man's opinions, a thousand thickets,
+          </div>
+          <div class="line">
+            My interwoven existence,
+          </div>
+          <div class="line">
+            My life,
+          </div>
+          <div class="line">
+            Caught in the stubble of the world
+          </div>
+          <div class="line">
+            Like a tender veil,--
+          </div>
+          <div class="line">
+            This stays me.
+          </div>
+          <div class="line">
+            No strange move can I make
+          </div>
+          <div class="line">
+            Without noise of tearing.
+          </div>
+          <div class="line">
+            I dare not.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            If love loves,
+          </div>
+          <div class="line">
+            There is no world
+          </div>
+          <div class="line">
+            Nor word.
+          </div>
+          <div class="line">
+            All is lost
+          </div>
+          <div class="line">
+            Save thought of love
+          </div>
+          <div class="line">
+            And place to dream.
+          </div>
+          <div class="line">
+            You love me?
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            I love you.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            You are, then, cold coward.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Aye; but beloved--
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Love walked alone.
+          </div>
+          <div class="line">
+            The rocks cut her tender feet,
+          </div>
+          <div class="line">
+            And the brambles tore her fair limbs.
+          </div>
+          <div class="line">
+            There came a companion to her,
+          </div>
+          <div class="line">
+            But, alas, he was no help,
+          </div>
+          <div class="line">
+            For his name was Heart's Pain.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            I walked in a desert.
+          </div>
+          <div class="line">
+            And I cried,
+          </div>
+          <div class="line">
+            "Ah, God, take me from this place!"
+          </div>
+          <div class="line">
+            A voice said, "It is no desert."
+          </div>
+          <div class="line">
+            I cried, "Well, but--
+          </div>
+          <div class="line">
+            "The sand, the heat, the vacant horizon."
+          </div>
+          <div class="line">
+            A voice said, "It is no desert."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There came whisperings in the winds
+          </div>
+          <div class="line">
+            "Good bye! Good bye!"
+          </div>
+          <div class="line">
+            Little voices called in the darkness:
+          </div>
+          <div class="line">
+            "Good bye! Good bye!"
+          </div>
+          <div class="line">
+            Then I stretched forth my arms.
+          </div>
+          <div class="line">
+            "No--no--"
+          </div>
+          <div class="line">
+            There came whisperings in the wind:
+          </div>
+          <div class="line">
+            "Good bye! Good bye!"
+          </div>
+          <div class="line">
+            Little voices called in the darkness:
+          </div>
+          <div class="line">
+            "Good bye! Good bye!"
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLIV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            I was in the darkness;
+          </div>
+          <div class="line">
+            I could not see my words
+          </div>
+          <div class="line">
+            Nor the wishes of my heart.
+          </div>
+          <div class="line">
+            Then suddenly there was a great light--
+          </div>
+          <div class="line">
+            "Let me into the darkness again."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Tradition, thou art for suckling children,
+          </div>
+          <div class="line">
+            Thou art the enlivening milk for babes;
+          </div>
+          <div class="line">
+            But no meat for men is in thee.
+          </div>
+          <div class="line">
+            Then--
+          </div>
+          <div class="line">
+            But, alas, we all are babes.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLVI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Many red devils ran from my heart
+          </div>
+          <div class="line">
+            And out upon the page,
+          </div>
+          <div class="line">
+            They were so tiny
+          </div>
+          <div class="line">
+            The pen could mash them.
+          </div>
+          <div class="line">
+            And many struggled in the ink.
+          </div>
+          <div class="line">
+            It was strange
+          </div>
+          <div class="line">
+            To write in this red muck
+          </div>
+          <div class="line">
+            Of things from my heart.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLVII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            "Think as I think," said a man,
+          </div>
+          <div class="line">
+            "Or you are abominably wicked;
+          </div>
+          <div class="line">
+            "You are a toad."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            And after I had thought of it,
+          </div>
+          <div class="line">
+            I said, "I will, then, be a toad."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLVIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Once there was a man,--
+          </div>
+          <div class="line">
+            Oh, so wise!
+          </div>
+          <div class="line">
+            In all drink
+          </div>
+          <div class="line">
+            He detected the bitter,
+          </div>
+          <div class="line">
+            And in all touch
+          </div>
+          <div class="line">
+            He found the sting.
+          </div>
+          <div class="line">
+            At last he cried thus:
+          </div>
+          <div class="line">
+            "There is nothing,--
+          </div>
+          <div class="line">
+            "No life,
+          </div>
+          <div class="line">
+            "No joy,
+          </div>
+          <div class="line">
+            "No pain,--
+          </div>
+          <div class="line">
+            "There is nothing save opinion,
+          </div>
+          <div class="line">
+            "And opinion be damned."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">XLIX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            I stood musing in a black world,
+          </div>
+          <div class="line">
+            Not knowing where to direct my feet.
+          </div>
+          <div class="line">
+            And I saw the quick stream of men
+          </div>
+          <div class="line">
+            Pouring ceaselessly,
+          </div>
+          <div class="line">
+            Filled with eager faces,
+          </div>
+          <div class="line">
+            A torrent of desire.
+          </div>
+          <div class="line">
+            I called to them,
+          </div>
+          <div class="line">
+            "Where do you go? What do you see?"
+          </div>
+          <div class="line">
+            A thousand voices called to me.
+          </div>
+          <div class="line">
+            A thousand fingers pointed.
+          </div>
+          <div class="line">
+            "Look! Look! There!"
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            I know not of it.
+          </div>
+          <div class="line">
+            But, lo! in the far sky shone a radiance
+          </div>
+          <div class="line">
+            Ineffable, divine,--
+          </div>
+          <div class="line">
+            A vision painted upon a pall;
+          </div>
+          <div class="line">
+            And sometimes it was,
+          </div>
+          <div class="line">
+            And sometimes it was not.
+          </div>
+          <div class="line">
+            I hesitated.
+          </div>
+          <div class="line">
+            Then from the stream
+          </div>
+          <div class="line">
+            Came roaring voices,
+          </div>
+          <div class="line">
+            Impatient:
+          </div>
+          <div class="line">
+            "Look! Look! There!"
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            So again I saw,
+          </div>
+          <div class="line">
+            And leaped, unhesitant,
+          </div>
+          <div class="line">
+            And struggled and fumed
+          </div>
+          <div class="line">
+            With outspread clutching fingers.
+          </div>
+          <div class="line">
+            The hard hills tore my flesh;
+          </div>
+          <div class="line">
+            The ways bit my feet.
+          </div>
+          <div class="line">
+            At last I looked again.
+          </div>
+          <div class="line">
+            No radiance in the far sky,
+          </div>
+          <div class="line">
+            Ineffable, divine;
+          </div>
+          <div class="line">
+            No vision painted upon a pall;
+          </div>
+          <div class="line">
+            And always my eyes ached for the light.
+          </div>
+          <div class="line">
+            Then I cried in despair,
+          </div>
+          <div class="line">
+            "I see nothing! Oh, where do I go?"
+          </div>
+          <div class="line">
+            The torrent turned again its faces:
+          </div>
+          <div class="line">
+            "Look! Look! There!"
+          </div>
+          <div class="line">
+            And at the blindness of my spirit
+          </div>
+          <div class="line">
+            They screamed,
+          </div>
+          <div class="line">
+            "Fool! Fool! Fool!"
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">L</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            You say you are holy,
+          </div>
+          <div class="line">
+            And that
+          </div>
+          <div class="line">
+            Because I have not seen you sin.
+          </div>
+          <div class="line">
+            Aye, but there are those
+          </div>
+          <div class="line">
+            Who see you sin, my friend.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            A man went before a strange god,--
+          </div>
+          <div class="line">
+            The god of many men, sadly wise.
+          </div>
+          <div class="line">
+            And the deity thundered loudly,
+          </div>
+          <div class="line">
+            Fat with rage, and puffing,
+          </div>
+          <div class="line">
+            "Kneel, mortal, and cringe
+          </div>
+          <div class="line">
+            "And grovel and do homage
+          </div>
+          <div class="line">
+            "To my particularly sublime majesty."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            The man fled.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Then the man went to another god,--
+          </div>
+          <div class="line">
+            The god of his inner thoughts.
+          </div>
+          <div class="line">
+            And this one looked at him
+          </div>
+          <div class="line">
+            With soft eyes
+          </div>
+          <div class="line">
+            Lit with infinite comprehension,
+          </div>
+          <div class="line">
+            And said, "My poor child!"
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Why do you strive for greatness, fool?
+          </div>
+          <div class="line">
+            Go pluck a bough and wear it.
+          </div>
+          <div class="line">
+            It is as sufficing.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            My lord, there are certain barbarians
+          </div>
+          <div class="line">
+            Who tilt their noses
+          </div>
+          <div class="line">
+            As if the stars were flowers,
+          </div>
+          <div class="line">
+            And thy servant is lost among their shoe-buckles.
+          </div>
+          <div class="line">
+            Fain would I have mine eyes even with their eyes.
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            Fool, go pluck a bough and wear it.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LIII</p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="center medium pfirst">I</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Blustering god,
+          </div>
+          <div class="line">
+            Stamping across the sky
+          </div>
+          <div class="line">
+            With loud swagger,
+          </div>
+          <div class="line">
+            I fear you not.
+          </div>
+          <div class="line">
+            No, though from your highest heaven
+          </div>
+          <div class="line">
+            You plunge your spear at my heart,
+          </div>
+          <div class="line">
+            I fear you not.
+          </div>
+          <div class="line">
+            No, not if the blow
+          </div>
+          <div class="line">
+            Is as the lightning blasting a tree,
+          </div>
+          <div class="line">
+            I fear you not, puffing braggart.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="center medium pfirst">II</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            If thou can see into my heart
+          </div>
+          <div class="line">
+            That I fear thee not,
+          </div>
+          <div class="line">
+            Thou wilt see why I fear thee not,
+          </div>
+          <div class="line">
+            And why it is right.
+          </div>
+          <div class="line">
+            So threaten not, thou, with thy bloody spears,
+          </div>
+          <div class="line">
+            Else thy sublime ears shall hear curses.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="center medium pfirst">III</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Withal, there is one whom I fear;
+          </div>
+          <div class="line">
+            I fear to see grief upon that face.
+          </div>
+          <div class="line">
+            Perchance, Friend, he is not your god;
+          </div>
+          <div class="line">
+            If so, spit upon him.
+          </div>
+          <div class="line">
+            By it you will do no profanity.
+          </div>
+          <div class="line">
+            But I--
+          </div>
+          <div class="line">
+            Ah, sooner would I die
+          </div>
+          <div class="line">
+            Than see tears in those eyes of my soul.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LIV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            "It was wrong to do this," said the angel.
+          </div>
+          <div class="line">
+            "You should live like a flower,
+          </div>
+          <div class="line">
+            "Holding malice like a puppy,
+          </div>
+          <div class="line">
+            "Waging war like a lambkin."
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            "Not so," quoth the man
+          </div>
+          <div class="line">
+            Who had no fear of spirits;
+          </div>
+          <div class="line">
+            "It is only wrong for angels
+          </div>
+          <div class="line">
+            "Who can live like the flowers,
+          </div>
+          <div class="line">
+            "Holding malice like the puppies,
+          </div>
+          <div class="line">
+            "Waging war like the lambkins."
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            A man toiled on a burning road,
+          </div>
+          <div class="line">
+            Never resting.
+          </div>
+          <div class="line">
+            Once he saw a fat, stupid ass
+          </div>
+          <div class="line">
+            Grinning at him from a green place.
+          </div>
+          <div class="line">
+            The man cried out in rage,
+          </div>
+          <div class="line">
+            "Ah! Do not deride me, fool!
+          </div>
+          <div class="line">
+            "I know you--
+          </div>
+          <div class="line">
+            "All day stuffing your belly,
+          </div>
+          <div class="line">
+            "Burying your heart
+          </div>
+          <div class="line">
+            "In grass and tender sprouts:
+          </div>
+          <div class="line">
+            "It will not suffice you."
+          </div>
+          <div class="line">
+            But the ass only grinned at him from the green place.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LVI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            A man feared that he might find an assassin;
+          </div>
+          <div class="line">
+            Another that he might find a victim.
+          </div>
+          <div class="line">
+            One was more wise than the other.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LVII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            With eye and with gesture
+          </div>
+          <div class="line">
+            You say you are holy.
+          </div>
+          <div class="line">
+            I say you lie;
+          </div>
+          <div class="line">
+            For I did see you
+          </div>
+          <div class="line">
+            Draw away your coats
+          </div>
+          <div class="line">
+            From the sin upon the hands
+          </div>
+          <div class="line">
+            Of a little child.
+          </div>
+          <div class="line">
+            Liar!
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LVIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            The sage lectured brilliantly.
+          </div>
+          <div class="line">
+            Before him, two images:
+          </div>
+          <div class="line">
+            "Now this one is a devil,
+          </div>
+          <div class="line">
+            "And this one is me."
+          </div>
+          <div class="line">
+            He turned away.
+          </div>
+          <div class="line">
+            Then a cunning pupil
+          </div>
+          <div class="line">
+            Changed the positions.
+          </div>
+          <div class="line">
+            Turned the sage again:
+          </div>
+          <div class="line">
+            "Now this one is a devil,
+          </div>
+          <div class="line">
+            "And this one is me."
+          </div>
+          <div class="line">
+            The pupils sat, all grinning,
+          </div>
+          <div class="line">
+            And rejoiced in the game.
+          </div>
+          <div class="line">
+            But the sage was a sage.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LIX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Walking in the sky,
+          </div>
+          <div class="line">
+            A man in strange black garb
+          </div>
+          <div class="line">
+            Encountered a radiant form.
+          </div>
+          <div class="line">
+            Then his steps were eager;
+          </div>
+          <div class="line">
+            Bowed he devoutly.
+          </div>
+          <div class="line">
+            "My Lord," said he.
+          </div>
+          <div class="line">
+            But the spirit knew him not.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LX</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Upon the road of my life,
+          </div>
+          <div class="line">
+            Passed me many fair creatures,
+          </div>
+          <div class="line">
+            Clothed all in white, and radiant.
+          </div>
+          <div class="line">
+            To one, finally, I made speech:
+          </div>
+          <div class="line">
+            "Who art thou?"
+          </div>
+          <div class="line">
+            But she, like the others,
+          </div>
+          <div class="line">
+            Kept cowled her face,
+          </div>
+          <div class="line">
+            And answered in haste, anxiously,
+          </div>
+          <div class="line">
+            "I am Good Deed, forsooth;
+          </div>
+          <div class="line">
+            "You have often seen me."
+          </div>
+          <div class="line">
+            "Not uncowled," I made reply.
+          </div>
+          <div class="line">
+            And with rash and strong hand,
+          </div>
+          <div class="line">
+            Though she resisted,
+          </div>
+          <div class="line">
+            I drew away the veil
+          </div>
+          <div class="line">
+            And gazed at the features of Vanity
+          </div>
+          <div class="line">
+            She, shamefaced, went on;
+          </div>
+          <div class="line">
+            And after I had mused a time,
+          </div>
+          <div class="line">
+            I said of myself,
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              "Fool!"
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LXI</p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="center medium pfirst">I</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was a man and a woman
+          </div>
+          <div class="line">
+            Who sinned.
+          </div>
+          <div class="line">
+            Then did the man heap the punishment
+          </div>
+          <div class="line">
+            All upon the head of her,
+          </div>
+          <div class="line">
+            And went away gayly.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="center medium pfirst">II</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was a man and a woman
+          </div>
+          <div class="line">
+            Who sinned.
+          </div>
+          <div class="line">
+            And the man stood with her.
+          </div>
+          <div class="line">
+            As upon her head, so upon his,
+          </div>
+          <div class="line">
+            Fell blow and blow,
+          </div>
+          <div class="line">
+            And all people screaming, "Fool!"
+          </div>
+          <div class="line">
+            He was a brave heart.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="center medium pfirst">III</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            He was a brave heart.
+          </div>
+          <div class="line">
+            Would you speak with him, friend?
+          </div>
+          <div class="line">
+            Well, he is dead,
+          </div>
+          <div class="line">
+            And there went your opportunity.
+          </div>
+          <div class="line">
+            Let it be your grief
+          </div>
+          <div class="line">
+            That he is dead
+          </div>
+          <div class="line">
+            And your opportunity gone;
+          </div>
+          <div class="line">
+            For, in that, you were a coward.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LXII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was a man who lived a life of fire.
+          </div>
+          <div class="line">
+            Even upon the fabric of time,
+          </div>
+          <div class="line">
+            Where purple becomes orange
+          </div>
+          <div class="line">
+            And orange purple,
+          </div>
+          <div class="line">
+            This life glowed,
+          </div>
+          <div class="line">
+            A dire red stain, indelible;
+          </div>
+          <div class="line">
+            Yet when he was dead,
+          </div>
+          <div class="line">
+            He saw that he had not lived.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LXIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            There was a great cathedral.
+          </div>
+          <div class="line">
+            To solemn songs,
+          </div>
+          <div class="line">
+            A white procession
+          </div>
+          <div class="line">
+            Moved toward the altar.
+          </div>
+          <div class="line">
+            The chief man there
+          </div>
+          <div class="line">
+            Was erect, and bore himself proudly.
+          </div>
+          <div class="line">
+            Yet some could see him cringe,
+          </div>
+          <div class="line">
+            As in a place of danger,
+          </div>
+          <div class="line">
+            Throwing frightened glances into the air,
+          </div>
+          <div class="line">
+            A-start at threatening faces of the past.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LXIV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Friend, your white beard sweeps the ground,
+          </div>
+          <div class="line">
+            Why do you stand, expectant?
+          </div>
+          <div class="line">
+            Do you hope to see it
+          </div>
+          <div class="line">
+            In one of your withered days?
+          </div>
+          <div class="line">
+            With your old eyes
+          </div>
+          <div class="line">
+            Do you hope to see
+          </div>
+          <div class="line">
+            The triumphal march of Justice?
+          </div>
+          <div class="line">
+            Do not wait, friend
+          </div>
+          <div class="line">
+            Take your white beard
+          </div>
+          <div class="line">
+            And your old eyes
+          </div>
+          <div class="line">
+            To more tender lands.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LXV</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            Once, I knew a fine song,
+          </div>
+          <div class="line">
+            --It is true, believe me,--
+          </div>
+          <div class="line">
+            It was all of birds,
+          </div>
+          <div class="line">
+            And I held them in a basket;
+          </div>
+          <div class="line">
+            When I opened the wicket,
+          </div>
+          <div class="line">
+            Heavens! They all flew away.
+          </div>
+          <div class="line">
+            I cried, "Come back, little thoughts!"
+          </div>
+          <div class="line">
+            But they only laughed.
+          </div>
+          <div class="line">
+            They flew on
+          </div>
+          <div class="line">
+            Until they were as sand
+          </div>
+          <div class="line">
+            Thrown between me and the sky.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LXVI</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            If I should cast off this tattered coat,
+          </div>
+          <div class="line">
+            And go free into the mighty sky;
+          </div>
+          <div class="line">
+            If I should find nothing there
+          </div>
+          <div class="line">
+            But a vast blue,
+          </div>
+          <div class="line">
+            Echoless, ignorant,--
+          </div>
+          <div class="line">
+            What then?
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LXVII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            God lay dead in Heaven;
+          </div>
+          <div class="line">
+            Angels sang the hymn of the end;
+          </div>
+          <div class="line">
+            Purple winds went moaning,
+          </div>
+          <div class="line">
+            Their wings drip-dripping
+          </div>
+          <div class="line">
+            With blood
+          </div>
+          <div class="line">
+            That fell upon the earth.
+          </div>
+          <div class="line">
+            It, groaning thing,
+          </div>
+          <div class="line">
+            Turned black and sank.
+          </div>
+          <div class="line">
+            Then from the far caverns
+          </div>
+          <div class="line">
+            Of dead sins
+          </div>
+          <div class="line">
+            Came monsters, livid with desire.
+          </div>
+          <div class="line">
+            They fought,
+          </div>
+          <div class="line">
+            Wrangled over the world,
+          </div>
+          <div class="line">
+            A morsel.
+          </div>
+          <div class="line">
+            But of all sadness this was sad,--
+          </div>
+          <div class="line">
+            A woman's arms tried to shield
+          </div>
+          <div class="line">
+            The head of a sleeping man
+          </div>
+          <div class="line">
+            From the jaws of the final beast.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 3em"></div>
+    <p class="center large pfirst">LXVIII</p>
+    <div class="vspace" style="height: 1em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            A spirit sped
+          </div>
+          <div class="line">
+            Through spaces of night;
+          </div>
+          <div class="line">
+            And as he sped, he called,
+          </div>
+          <div class="line">
+            "God! God!"
+          </div>
+          <div class="line">
+            He went through valleys
+          </div>
+          <div class="line">
+            Of black death-slime,
+          </div>
+          <div class="line">
+            Ever calling,
+          </div>
+          <div class="line">
+            "God! God!"
+          </div>
+          <div class="line">
+            Their echoes
+          </div>
+          <div class="line">
+            From crevice and cavern
+          </div>
+          <div class="line">
+            Mocked him:
+          </div>
+          <div class="line">
+            "God! God! God!"
+          </div>
+          <div class="line">
+            Fleetly into the plains of space
+          </div>
+          <div class="line">
+            He went, ever calling,
+          </div>
+          <div class="line">
+            "God! God!"
+          </div>
+          <div class="line">
+            Eventually, then, he screamed,
+          </div>
+          <div class="line">
+            Mad in denial,
+          </div>
+          <div class="line">
+            "Ah, there is no God!"
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            A swift hand,
+          </div>
+          <div class="line">
+            A sword from the sky,
+          </div>
+          <div class="line">
+            Smote him,
+          </div>
+          <div class="line">
+            And he was dead.
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 6em"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="backmatter"></div>
+    <div class="cleardoublepage"></div>
+  </div>
+</body>
+</html>
